@@ -4,4 +4,4 @@ echo $a
 echo ${a}000
 
 datestring = $(date)
-echo today date is $datestring
+echo today date is $(datestring)
