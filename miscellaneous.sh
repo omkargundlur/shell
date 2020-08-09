@@ -1,6 +1,6 @@
 #!/bin/expect
 
-#add password in run time
+#add password in run time execution
 useradd demo1
 echo 'unjG123@' | sudo passwd --stdin demo1
 <<'output'
