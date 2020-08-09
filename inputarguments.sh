@@ -7,10 +7,11 @@ echo "total Number of arguments is $#"
 
 #Executing script like ./inputarguments.sh arg1 arg2 #will give the number of arguments
 
-<< 'Output'[root@centos shell]# ./inputarguments.sh arg1 arg2 arg3
+<<'end_long_comment'
+[root@centos shell]# ./inputarguments.sh arg1 arg2 arg3
 script name is ./inputarguments.sh
 First argument is arg1
 Second argument is arg2
 all arguments = arg1 arg2 arg3
 total Number of arguments is 3
-Output
+end_long_comment
