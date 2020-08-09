@@ -6,3 +6,5 @@ wc first.sh
 
 #Print multiple Lines
 echo -e "Hello World \n Next Hello India"
+
+echo -e "\e[31mHello"
