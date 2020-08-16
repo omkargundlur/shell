@@ -8,5 +8,13 @@ sudo wget -O /etc/yum.repos.d/jenkins.repo \
 sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
 sudo yum upgrade
 sudo yum install jenkins java-1.8.0-openjdk-devel
+sudo systemctl start jenkins
+sudo systemctl status jenkins
 
 Add Inbound Rule at port 8080 in NSG
+
+The simple answer is, Agent is for declarative pipelines and node is for scripted pipelines.
+
+In declarative pipelines the agent directive is used for specifying which agent/slave the job/task is to be executed on. This directive only allows you to specify where the task is to be executed, which agent, slave, label or docker image.
+
+On the other hand, in scripted pipelines the node step can be used for executing a script/step on a specific agent, label, slave. The node step optionally takes the agent or label name and then a closure with code that is to be executed on that node.
