@@ -1,0 +1,50 @@
+pipeline {
+  agent any
+  stages {
+    stage ('Initialize') {
+      steps {
+        sh label: '', script: '''echo \'Ehllo World\'
+echo \'bye\''''
+      }
+    }
+  }
+}
+
+pipeline {
+  agent {
+      node{
+          label 'INFRA'
+      }
+  }
+  stages {
+    stage ('Initialize') {
+      steps {
+        sh label: '', script: '''echo \'Ehllo World\'
+echo \'bye\''''
+      }
+    }
+  }
+}
+
+#To Clone a Repo
+
+pipeline {
+  agent {
+      node{
+          label 'INFRA'
+      }
+  }
+  stages {
+    stage('Clone Repo'){
+        steps{
+            git changelog: false, poll: false, url: 'https://github.com/omkargundlur/shell.git'
+        }
+    }  
+    stage ('Initialize') {
+      steps {
+        sh label: '', script: '''echo \'Ehllo World\'
+echo \'bye\''''
+      }
+    }
+  }
+}
